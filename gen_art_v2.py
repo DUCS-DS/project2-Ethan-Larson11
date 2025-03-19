@@ -99,7 +99,7 @@ while not quit:
 
     for i, node1 in enumerate(nodes):
         #x1, y1 = node1.x, node1.y
-        for node2 in nodes[i+1 : i+20]:
+        for node2 in nodes[i+1 + i+20:]:
             x1, y1 = node1.x, node1.y
             x2, y2 = node2.x, node2.y
             d_squared = (x1 - x2) ** 2 + (y1 - y2) ** 2
@@ -108,7 +108,7 @@ while not quit:
                     screen, blue((thresh - d_squared) / thresh), (x1, y1), (x2, y2)
                 )
 
-    clock.tick(120)
+    clock.tick(60)
     pygame.display.flip()
     print(clock.get_fps())
 
